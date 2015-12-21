@@ -7,6 +7,7 @@ module.exports = ({data, width, height, fill}) ->
   {data.map (element, i) ->
     elementHeight = element / max * height
     <rect
+      className='bar'
       key={i}
       width={dx - 1}
       height={elementHeight}
