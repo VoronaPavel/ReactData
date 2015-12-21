@@ -1,6 +1,6 @@
 React = require 'react'
 
-module.exports = ({data, width, height, fill}) ->
+BarChart = ({data, width, height, fill}) ->
   max = Math.max data...
   dx = width / data.length
   <svg width={width} height={height}>
@@ -15,3 +15,11 @@ module.exports = ({data, width, height, fill}) ->
       y={height - elementHeight}
       fill={fill}/>}
   </svg>
+
+BarChart.propTypes =
+  data = react.PropTypes.array.isRequired
+  width = react.PropTypes.number.isRequired
+  height = react.PropTypes.number.isRequired
+  fill = react.PropTypes.string.isRequired
+
+module.exports = BarChart
