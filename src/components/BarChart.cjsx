@@ -8,7 +8,7 @@ module.exports = ({data, width, height, fill}) ->
     elementHeight = element / max * height
     <rect
       key={i}
-      width={dx}
+      width={dx - 1}
       height={elementHeight}
       x={dx * i}
       y={height - elementHeight}
