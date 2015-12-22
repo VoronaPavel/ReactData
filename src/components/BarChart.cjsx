@@ -8,12 +8,12 @@ BarChart = ({data, width, height, fill}) ->
     elementHeight = element / max * height
     <rect
       className='bar'
+      fill={fill}
+      height={elementHeight}
       key={i}
       width={dx - 1}
-      height={elementHeight}
       x={dx * i}
-      y={height - elementHeight}
-      fill={fill}/>}
+      y={height - elementHeight}/>}
   </svg>
 
 BarChart.propTypes =
