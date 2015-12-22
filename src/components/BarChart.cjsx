@@ -1,7 +1,7 @@
 React = require 'react'
 
 BarChart = ({data, width, height, fill}) ->
-  max = Math.max data...
+  max = Math.max data ...
   dx = width / data.length
   <g>
   {data.map (element, i) ->
