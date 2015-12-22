@@ -17,9 +17,9 @@ BarChart = ({data, width, height, fill}) ->
   </g>
 
 BarChart.propTypes =
-  data: React.PropTypes.array.isRequired
-  width: React.PropTypes.number.isRequired
-  height: React.PropTypes.number.isRequired
-  fill: React.PropTypes.string.isRequired
+  data   : React.PropTypes.array.isRequired
+  width  : React.PropTypes.number.isRequired
+  height : React.PropTypes.number.isRequired
+  fill   : React.PropTypes.string.isRequired
 
 module.exports = BarChart
