@@ -7,13 +7,13 @@ Scatter = ({data, width, height, fill, stroke = 'red', r = 5}) ->
   {data.map (element, i) ->
     elementHeight = element / max * (height - r)
     <circle
+      className='point'
       cx={dx * i + r}
       cy={height - elementHeight}
       fill={fill}
       key={i}
       r={r}
-      stroke={stroke}
-      className='point'/>}
+      stroke={stroke}/>}
   </g>
 
 Scatter.propTypes =
