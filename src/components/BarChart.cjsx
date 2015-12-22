@@ -17,9 +17,9 @@ BarChart = ({data, width, height, fill}) ->
   </svg>
 
 BarChart.propTypes =
-  data = react.PropTypes.array.isRequired
-  width = react.PropTypes.number.isRequired
-  height = react.PropTypes.number.isRequired
-  fill = react.PropTypes.string.isRequired
+  data: react.PropTypes.array.isRequired
+  width: react.PropTypes.number.isRequired
+  height: react.PropTypes.number.isRequired
+  fill: react.PropTypes.string.isRequired
 
 module.exports = BarChart
