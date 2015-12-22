@@ -3,7 +3,9 @@ ReactDOM = require 'react-dom'
 BarChart = require './components/BarChart'
 
 App = (props) ->
-  <BarChart {...props}/>
+  <svg width={props.width} height={props.height}>
+    <BarChart {...props}/>
+  </svg>
 
 data = [150,300,400,50,123,323,234,345,435,600,300]
 

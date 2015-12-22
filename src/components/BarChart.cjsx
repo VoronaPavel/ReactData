@@ -3,7 +3,7 @@ React = require 'react'
 BarChart = ({data, width, height, fill}) ->
   max = Math.max data...
   dx = width / data.length
-  <svg width={width} height={height}>
+  <g>
   {data.map (element, i) ->
     elementHeight = element / max * height
     <rect
@@ -14,7 +14,7 @@ BarChart = ({data, width, height, fill}) ->
       width={dx - 1}
       x={dx * i}
       y={height - elementHeight}/>}
-  </svg>
+  </g>
 
 BarChart.propTypes =
   data: react.PropTypes.array.isRequired
