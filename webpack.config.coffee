@@ -13,7 +13,7 @@ module.exports =
   ]
   module:
     loaders: [
-      test: /\.cjsx$/
+      test: [/\.cjsx$/, /\.coffee$/]
       loaders: ['react-hot-loader', 'coffee-loader', 'cjsx-loader']
       exclude: '/node_modules/'
     ]
