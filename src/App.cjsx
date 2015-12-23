@@ -12,7 +12,7 @@ App = (props) ->
   </svg>
 
 ReactDOM.render <App
-  data={Data.1D}
+  data={Data.Simple}
   width={document.documentElement.clientWidth-4}
   height={document.documentElement.clientHeight-4}
   fill='white'/>, document.getElementById 'app'
