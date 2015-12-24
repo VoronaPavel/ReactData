@@ -13,7 +13,8 @@ BarChart = ({data, width, height, fill}) ->
       key={i}
       width={dx - 1}
       x={dx * i}
-      y={height - elementHeight}/>}
+      y={height - elementHeight}
+    />}
   </g>
 
 BarChart.propTypes =

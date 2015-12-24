@@ -8,11 +8,16 @@ Scatter  = require './components/Scatter'
 
 App = (props) ->
   <svg width={props.width} height={props.height}>
-    <Scatter {...props}/>
+    <Scatter {...props} />
   </svg>
 
-ReactDOM.render <App
-  data={Data.Simple}
-  width={document.documentElement.clientWidth-4}
-  height={document.documentElement.clientHeight-4}
-  fill='white'/>, document.getElementById 'app'
+app = <App
+        data={Data.Simple}
+        width={document.documentElement.clientWidth-4}
+        height={document.documentElement.clientHeight-4}
+        fill='white'
+      />
+
+App.displayName = 'App'
+
+ReactDOM.render app, document.getElementById 'app'

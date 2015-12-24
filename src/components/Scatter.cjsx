@@ -13,7 +13,8 @@ Scatter = ({data, width, height, fill, stroke = 'red', r = 5}) ->
       fill={fill}
       key={i}
       r={r}
-      stroke={stroke}/>}
+      stroke={stroke}
+    />}
   </g>
 
 Scatter.propTypes =
