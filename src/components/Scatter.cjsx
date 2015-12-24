@@ -23,4 +23,6 @@ Scatter.propTypes =
   fill   : React.PropTypes.string.isRequired
   stroke : React.PropTypes.string
 
+Scatter.displayName = 'Scatter'
+
 module.exports = Scatter

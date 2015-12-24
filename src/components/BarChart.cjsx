@@ -22,4 +22,6 @@ BarChart.propTypes =
   height : React.PropTypes.number.isRequired
   fill   : React.PropTypes.string.isRequired
 
+BarChart.displayName = 'BarChart'
+
 module.exports = BarChart
