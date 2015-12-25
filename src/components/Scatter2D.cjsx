@@ -1,4 +1,5 @@
 React = require 'react'
+PropTypes = require('react').PropTypes
 
 Scatter2D = ({data, width, height, fill, stroke, r, className}) ->
   minX = data.map(([x, y]) -> x).reduce((left, right) -> Math.min left, right) #todo optimize
@@ -21,13 +22,13 @@ Scatter2D = ({data, width, height, fill, stroke, r, className}) ->
   </g>
 
 Scatter2D.propTypes =
-  data      : React.PropTypes.arrayOf(React.PropTypes.arrayOf(React.PropTypes.number)).isRequired
-  width     : React.PropTypes.number.isRequired
-  height    : React.PropTypes.number.isRequired
-  fill      : React.PropTypes.string
-  stroke    : React.PropTypes.string
-  className : React.PropTypes.string
-  r         : React.PropTypes.number
+  data      : PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
+  width     : PropTypes.number.isRequired
+  height    : PropTypes.number.isRequired
+  fill      : PropTypes.string
+  stroke    : PropTypes.string
+  className : PropTypes.string
+  r         : PropTypes.number
 
 Scatter2D.defaultProps =
   className : 'point'
