@@ -27,6 +27,7 @@ Scatter2D.propTypes =
   fill      : React.PropTypes.string
   stroke    : React.PropTypes.string
   className : React.PropTypes.string
+  r         : React.PropTypes.number
 
 Scatter2D.defaultProps =
   className : 'point'

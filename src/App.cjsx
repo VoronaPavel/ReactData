@@ -1,11 +1,11 @@
-React    = require 'react'
-ReactDOM = require 'react-dom'
+React     = require 'react'
+ReactDOM  = require 'react-dom'
 
-Data     = require './Data'
+Data      = require './Data'
 
-BarChart = require './components/BarChart'
-Scatter  = require './components/Scatter'
-Scatter2D  = require './components/Scatter2D'
+BarChart  = require './components/BarChart'
+Scatter   = require './components/Scatter'
+Scatter2D = require './components/Scatter2D'
 
 App = (props) ->
   <svg width={props.width} height={props.height}>
