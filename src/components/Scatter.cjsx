@@ -1,6 +1,6 @@
 React = require 'react'
 
-Scatter = ({data, width, height, fill, stroke = 'red', r = 5}) ->
+Scatter = ({data, width, height, fill, stroke, r}) ->
   max = Math.max data ...
   dx = (width - r) / data.length
   <g>
@@ -23,6 +23,11 @@ Scatter.propTypes =
   height : React.PropTypes.number.isRequired
   fill   : React.PropTypes.string.isRequired
   stroke : React.PropTypes.string
+
+Scatter.defaultProps =
+  fill   : 'white'
+  stroke : 'red'
+  r      : 10
 
 Scatter.displayName = 'Scatter'
 

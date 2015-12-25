@@ -15,7 +15,6 @@ app = <App
         data={Data.Simple}
         width={document.documentElement.clientWidth-4}
         height={document.documentElement.clientHeight-4}
-        fill='white'
       />
 
 App.displayName = 'App'
