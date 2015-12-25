@@ -5,14 +5,15 @@ Data     = require './Data'
 
 BarChart = require './components/BarChart'
 Scatter  = require './components/Scatter'
+Scatter2D  = require './components/Scatter2D'
 
 App = (props) ->
   <svg width={props.width} height={props.height}>
-    <Scatter {...props} />
+    <Scatter2D {...props} />
   </svg>
 
 app = <App
-        data={Data.Simple}
+        data={Data.Flat}
         width={document.documentElement.clientWidth-4}
         height={document.documentElement.clientHeight-4}
       />
