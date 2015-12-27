@@ -7,18 +7,18 @@ Scatter2D = ({data, width, height, fill, stroke, r, className, onClick, onMouseO
   [minX, maxX, minY, maxY] = Helper.calculate(data)
   <g>
   {data.map ([x, y], i) ->
-    elementWidth  = (x - minX) / (maxX - minX) * (width - 2 * r) + r
-    elementHeight = (y - minY) / (maxY - minY) * (height - 2 * r) + r
+    cx = (x - minX) / (maxX - minX) * (width - 2 * r) + r
+    cy = (y - minY) / (maxY - minY) * (height - 2 * r) + r
     <circle
       className={className}
-      cx={elementWidth}
-      cy={height - elementHeight}
+      cx={cx}
+      cy={height - cy}
       fill={fill}
       key={i}
-      r={r}
-      stroke={stroke}
       onClick={onClick}
       onMouseOver={onMouseOver}
+      r={r}
+      stroke={stroke}
     />}
   </g>
 
