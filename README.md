@@ -23,4 +23,4 @@ Some components accept different data formats:
 <Scatter data={ [[3, 5], [8, 6], [5, 2]] } />
 ```
 Components allow to pass callbacks to hook on their life cycle events as ```onMouseOver``` or ```onClick```.
-Every component has declared [PropTypes](https://facebook.github.io/react/docs/reusable-components.html#prop-validation) so prefer using not minified version of [react](https://github.com/facebook/react).
+Every component has declared [PropTypes](https://facebook.github.io/react/docs/reusable-components.html#prop-validation) so prefer using not minified version of [react](https://github.com/facebook/react) when developing.
