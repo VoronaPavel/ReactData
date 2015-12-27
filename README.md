@@ -1,5 +1,7 @@
 Data Visualization Components for React
 ==
+# Project in development mode and not ready for production usage.
+
 Currently implemented:
 --
 - Simple Bar Chart
