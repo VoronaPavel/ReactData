@@ -4,6 +4,7 @@ Currently implemented:
 --
 - Simple Bar Chart
 - Simple Scatter
+
 ## Examples
 ```js
 import { BarChart, Scatter } from 'react-data'
