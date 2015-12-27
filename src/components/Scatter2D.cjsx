@@ -5,7 +5,7 @@ Helper    = require './Helper'
 
 Scatter2D = ({data, width, height, fill, stroke, r, className, onClick, onMouseOver}) ->
   [minX, maxX, minY, maxY] = Helper.calculate(data)
-  <g>
+  <svg width={width} height={height}>
   {data.map ([x, y], i) ->
     cx = (x - minX) / (maxX - minX) * (width - 2 * r) + r
     cy = (y - minY) / (maxY - minY) * (height - 2 * r) + r
@@ -19,8 +19,8 @@ Scatter2D = ({data, width, height, fill, stroke, r, className, onClick, onMouseO
       onMouseOver={onMouseOver}
       r={r}
       stroke={stroke}
-    />}
-  </g>
+    ></circle>}
+  </svg>
 
 Scatter2D.propTypes =
   data        : PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
@@ -34,10 +34,8 @@ Scatter2D.propTypes =
   stroke      : PropTypes.string
 
 Scatter2D.defaultProps =
-  className : 'point'
-  fill      : 'white'
-  stroke    : 'red'
-  r         : 10
+  className   : 'point'
+  r           : 15
 
 Scatter2D.displayName = 'Scatter2D'
 

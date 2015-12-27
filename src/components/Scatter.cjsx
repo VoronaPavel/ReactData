@@ -3,31 +3,31 @@ React = require 'react'
 Scatter = ({data, width, height, fill, stroke, r}) ->
   max = Math.max data ...
   dx = (width - r) / data.length
-  <g>
+  <svg width={width} height={height}>
   {data.map (element, i) ->
+    elementWidth = dx * i + r
     elementHeight = element / max * (height - r)
     <circle
       className='point'
-      cx={dx * i + r}
+      cx={elementWidth}
       cy={height - elementHeight}
       fill={fill}
       key={i}
       r={r}
       stroke={stroke}
     />}
-  </g>
+  </svg>
 
 Scatter.propTypes =
   data   : React.PropTypes.array.isRequired
   width  : React.PropTypes.number.isRequired
   height : React.PropTypes.number.isRequired
-  fill   : React.PropTypes.string.isRequired
+  fill   : React.PropTypes.string
   stroke : React.PropTypes.string
 
 Scatter.defaultProps =
-  fill   : 'white'
-  stroke : 'red'
-  r      : 10
+  className   : 'point'
+  r           : 15
 
 Scatter.displayName = 'Scatter'
 

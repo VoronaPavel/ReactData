@@ -18,6 +18,7 @@
     "webpack": "^1.12.9"
   },
   "dependencies": {
-    "normalize.css": "^3.0.3"
+    "normalize.css": "^3.0.3",
+    "react-tooltip": "^0.9.8"
   }
 }

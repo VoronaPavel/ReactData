@@ -10,10 +10,9 @@ Plot = ({data, height, width}) ->
     cy = height - (y - minY) / (maxY - minY) * height
     "#{cx},#{cy}"
   myCoords = coords.reduce (left, right) -> "#{left} #{right}"
-  <g>
-    <polyline points={myCoords} className='plot'
-    />
-  </g>
+  <svg width={width} height={height}>
+    <polyline points={myCoords} className='plot' />
+  </svg>
 
 Plot.displayName = 'Plot'
 

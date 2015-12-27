@@ -2,11 +2,9 @@ React = require 'react'
 PropTypes = require('react').PropTypes
 
 Tooltip = ({x, y, text, className}) ->
-  <g>
-    <text x={x} y={y} className={className}>
-      {text}
-    </text>
-  </g>
+  <text x={x} y={y} className={className}>
+    {text}
+  </text>
 
 Tooltip.propTypes =
   text      : PropTypes.string.isRequired

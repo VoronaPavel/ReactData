@@ -12,15 +12,14 @@ Plot      = require './components/Plot'
 
 App = (props) ->
   <div>
-    <svg width={props.width} height={props.height}>
-      <Plot {...props} className={'plot'} />
-    </svg>
+    <Plot     data={Data.Line}   {...props} height={props.height / 3} />
+    <BarChart data={Data.Simple} {...props} height={props.height / 3} />
+    <Scatter  data={Data.Simple} {...props} height={props.height / 3} />
   </div>
 
 app = <App
-        data={Data.Line}
         width={document.documentElement.clientWidth-4}
-        height={document.documentElement.clientHeight-4}
+        height={document.documentElement.clientHeight-20}
       />
 
 App.displayName = 'App'
