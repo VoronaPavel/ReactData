@@ -12,9 +12,10 @@ Plot      = require './components/Plot'
 
 App = (props) ->
   <div>
-    <Plot     data={Data.Line}   {...props} height={props.height / 3} />
-    <BarChart data={Data.Simple} {...props} height={props.height / 3} />
-    <Scatter  data={Data.Simple} {...props} height={props.height / 3} />
+    <BarChart  data={Data.Simple} {...props} height={props.height / 4} />
+    <Scatter2D data={Data.Flat}   {...props} height={props.height / 4} />
+    <Plot      data={Data.Line}   {...props} height={props.height / 4} />
+    <Scatter   data={Data.Simple} {...props} height={props.height / 4} />
   </div>
 
 app = <App

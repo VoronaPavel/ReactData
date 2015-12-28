@@ -3,7 +3,7 @@ PropTypes = require('react').PropTypes
 
 Helper    = require './Helper'
 
-Scatter2D = ({data, width, height, fill, stroke, r, className, onClick, onMouseOver}) ->
+Scatter2D = ({data, width, height, r, className, shapeRendering}) ->
   [minX, maxX, minY, maxY] = Helper.calculate(data)
   <svg width={width} height={height}>
   {data.map ([x, y], i) ->
@@ -13,12 +13,9 @@ Scatter2D = ({data, width, height, fill, stroke, r, className, onClick, onMouseO
       className={className}
       cx={cx}
       cy={height - cy}
-      fill={fill}
       key={i}
-      onClick={onClick}
-      onMouseOver={onMouseOver}
       r={r}
-      stroke={stroke}
+      shapeRendering={shapeRendering}
     />}
   </svg>
 
@@ -27,15 +24,12 @@ Scatter2D.propTypes =
   height      : PropTypes.number.isRequired
   width       : PropTypes.number.isRequired
   className   : PropTypes.string
-  fill        : PropTypes.string
-  onClick     : PropTypes.func
-  onMouseOver : PropTypes.func
   r           : PropTypes.number
-  stroke      : PropTypes.string
 
 Scatter2D.defaultProps =
-  className   : 'point'
-  r           : 15
+  className      : 'point'
+  r              : 15
+  shapeRendering : 'crispEdges'
 
 Scatter2D.displayName = 'Scatter2D'
 
