@@ -1,6 +1,6 @@
 React = require 'react'
 
-BarChart = ({data, width, height, fill, spaceBetween}) ->
+BarChart = ({data, width, height, fill, spaceBetween, className}) ->
   max = Math.max data ...
   dx = width / data.length
   <svg width={width} height={height}>
@@ -8,7 +8,7 @@ BarChart = ({data, width, height, fill, spaceBetween}) ->
     elementWidth = dx * i
     elementHeight = element / max * height
     <rect
-      className='bar'
+      className={className}
       fill={fill}
       height={elementHeight}
       key={i}
@@ -26,6 +26,7 @@ BarChart.propTypes =
   spaceBetween : React.PropTypes.number
 
 BarChart.defaultProps =
+  className    : 'bar'
   spaceBetween : 1
 
 BarChart.displayName = 'BarChart'

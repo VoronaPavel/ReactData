@@ -3,7 +3,7 @@ PropTypes = require('react').PropTypes
 
 Helper    = require './Helper'
 
-Plot = ({data, height, width}) ->
+Plot = ({data, height, width, className}) ->
   [minX, maxX, minY, maxY] = Helper.calculate(data)
   coords = data.map ([x, y], i) ->
     cx = (x - minX) / (maxX - minX) * width
@@ -11,8 +11,11 @@ Plot = ({data, height, width}) ->
     "#{cx},#{cy}"
   myCoords = coords.reduce (left, right) -> "#{left} #{right}"
   <svg width={width} height={height}>
-    <polyline points={myCoords} className='plot' />
+    <polyline points={myCoords} className={className} />
   </svg>
+
+Plot.defaultProps =
+  className : 'plot'
 
 Plot.displayName = 'Plot'
 

@@ -1,6 +1,6 @@
 React = require 'react'
 
-Scatter = ({data, width, height, fill, stroke, r}) ->
+Scatter = ({data, width, height, fill, stroke, r, className}) ->
   max = Math.max data ...
   dx = (width - r) / data.length
   <svg width={width} height={height}>
@@ -8,7 +8,7 @@ Scatter = ({data, width, height, fill, stroke, r}) ->
     elementWidth = dx * i + r
     elementHeight = element / max * (height - r)
     <circle
-      className='point'
+      className={className}
       cx={elementWidth}
       cy={height - elementHeight}
       fill={fill}
