@@ -1,22 +1,24 @@
 React = require 'react'
 
-BarChart = ({data, width, height, spaceBetween, className, shapeRendering}) ->
-  max = Math.max data ...
-  dx = width / data.length
+BarChart = ({data, width, height, spaceBetween, className}) ->
   <svg width={width} height={height}>
-  {data.map (element, i) ->
-    elementWidth = dx * i
-    elementHeight = element / max * height
+  {scale(data, width, height).map ({x, y, width}, i) ->
     <rect
       className={className}
-      height={elementHeight}
+      height={y}
       key={i}
-      width={dx - spaceBetween}
-      x={elementWidth}
-      y={height - elementHeight}
-      shapeRendering={shapeRendering}
+      width={width - spaceBetween}
+      x={x}
+      y={height - y}
     />}
   </svg>
+
+scale = (data, width, height) ->
+  max = Math.max data ...
+  data.map (element, i) ->
+    x : width / data.length * i
+    y : element / max * height
+    width: width / data.length
 
 BarChart.propTypes =
   data         : React.PropTypes.arrayOf(React.PropTypes.number).isRequired
@@ -27,7 +29,6 @@ BarChart.propTypes =
 
 BarChart.defaultProps =
   className      : 'bar'
-  shapeRendering : 'crispEdges'
   spaceBetween   : 1
 
 BarChart.displayName = 'BarChart'
