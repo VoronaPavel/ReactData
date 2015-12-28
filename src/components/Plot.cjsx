@@ -3,20 +3,21 @@ PropTypes = require('react').PropTypes
 
 Helper    = require './Helper'
 
-Plot = ({data, height, width, className, shapeRendering}) ->
-  [minX, maxX, minY, maxY] = Helper.calculate(data)
-  coords = data.map ([x, y], i) ->
-    cx = (x - minX) / (maxX - minX) * width
-    cy = height - (y - minY) / (maxY - minY) * height
-    "#{cx},#{cy}"
-  myCoords = coords.reduce (left, right) -> "#{left} #{right}"
+Plot = ({data, height, width, className}) ->
+  points = scale(data, height, width)
   <svg width={width} height={height}>
     <polyline
-      points={myCoords}
+      points={points}
       className={className}
-      shapeRendering={shapeRendering}
     />
   </svg>
+
+scale = (data, height, width) ->
+  { minX, maxX, minY, maxY } = Helper.calculate(data)
+  data.map( ([x, y], i) ->
+    cx = (x - minX) / (maxX - minX) * width
+    cy = height - (y - minY) / (maxY - minY) * height
+    "#{cx},#{cy}").reduce (left, right) -> "#{left} #{right}"
 
 Plot.propTypes =
   data      : React.PropTypes.arrayOf(React.PropTypes.arrayOf(React.PropTypes.number)).isRequired
@@ -26,7 +27,6 @@ Plot.propTypes =
 
 Plot.defaultProps =
   className      : 'plot'
-  shapeRendering : 'crispEdges'
 
 Plot.displayName = 'Plot'
 

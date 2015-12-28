@@ -4,7 +4,7 @@ PropTypes = require('react').PropTypes
 Helper    = require './Helper'
 
 Scatter2D = ({data, width, height, r, className, shapeRendering}) ->
-  [minX, maxX, minY, maxY] = Helper.calculate(data)
+  { minX, maxX, minY, maxY } = Helper.calculate(data)
   <svg width={width} height={height}>
   {data.map ([x, y], i) ->
     cx = (x - minX) / (maxX - minX) * (width - 2 * r) + r
