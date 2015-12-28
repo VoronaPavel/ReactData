@@ -1,5 +1,5 @@
 React     = require 'react'
-PropTypes = require('react').PropTypes
+{ PropTypes } = require('react')
 
 Helper    = require './Helper'
 
