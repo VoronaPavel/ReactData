@@ -19,7 +19,7 @@ Scatter2D = ({data, width, height, fill, stroke, r, className, onClick, onMouseO
       onMouseOver={onMouseOver}
       r={r}
       stroke={stroke}
-    ></circle>}
+    />}
   </svg>
 
 Scatter2D.propTypes =
