@@ -1,21 +1,22 @@
 React = require 'react'
 
-Scatter = ({data, width, height, r, className, shapeRendering}) ->
-  max = Math.max data ...
-  dx = (width - r) / data.length
+Scatter = ({data, width, height, r, className}) ->
   <svg width={width} height={height}>
-  {data.map (element, i) ->
-    elementWidth = dx * i + r
-    elementHeight = element / max * (height - r)
+  {scale(data, r, width, height).map ({cx, cy}, i) ->
     <circle
       className={className}
-      cx={elementWidth}
-      cy={height - elementHeight}
+      cx={cx}
+      cy={cy}
       key={i}
       r={r}
-      shapeRendering={shapeRendering}
     />}
   </svg>
+
+scale = (data, r, width, height) ->
+  max = Math.max data ...
+  data.map (element, i) ->
+    cx: (width - r) / data.length * i + r
+    cy: height - element / max * (height - r)
 
 Scatter.propTypes =
   data      : React.PropTypes.arrayOf(React.PropTypes.number).isRequired
@@ -27,7 +28,6 @@ Scatter.propTypes =
 Scatter.defaultProps =
   className      : 'point'
   r              : 15
-  shapeRendering : 'crispEdges'
 
 Scatter.displayName = 'Scatter'
 
