@@ -19,7 +19,7 @@ Plot = ({data, height, width, className, shapeRendering}) ->
   </svg>
 
 Plot.propTypes =
-  data      : React.PropTypes.arrayOf(React.PropTypes.number).isRequired
+  data      : React.PropTypes.arrayOf(React.PropTypes.arrayOf(React.PropTypes.number)).isRequired
   height    : React.PropTypes.number.isRequired
   width     : React.PropTypes.number.isRequired
   className : React.PropTypes.string
