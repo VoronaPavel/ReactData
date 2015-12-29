@@ -4,7 +4,7 @@ React         = require 'react'
 Helper        = require './Helper'
 
 Plot = ({data, height, width, className}) ->
-  points = scale(data, height, width)
+  points = scale data, height, width
   <svg width={width} height={height}>
     <polyline
       points={points}
