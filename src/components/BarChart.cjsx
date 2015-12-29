@@ -2,23 +2,24 @@ React = require 'react'
 
 BarChart = ({data, width, height, spaceBetween, className}) ->
   <svg width={width} height={height}>
-  {scale(data, width, height).map ({x, y, width}, i) ->
+  {scale(data, width, height, spaceBetween).map ({x, y, width}, i) ->
     <rect
       className={className}
-      height={y}
+      height={height}
       key={i}
-      width={width - spaceBetween}
+      width={width}
       x={x}
-      y={height - y}
+      y={y}
     />}
   </svg>
 
-scale = (data, width, height) ->
+scale = (data, width, height, spaceBetween) ->
   max = Math.max data ...
   data.map (element, i) ->
-    x : width / data.length * i
-    y : element / max * height
-    width: width / data.length
+    height: element / max * height
+    x: width / data.length * i
+    y: height - element / max * height
+    width: width / data.length - spaceBetween
 
 BarChart.propTypes =
   data         : React.PropTypes.arrayOf(React.PropTypes.number).isRequired
