@@ -2,7 +2,7 @@ webpack = require 'webpack'
 OpenBrowserPlugin = require 'open-browser-webpack-plugin'
 
 module.exports =
-  entry: './src/App.cjsx'
+  entry: './src/index.cjsx'
   output:
     path: './build/js/'
     publicPath: '/build/js/'

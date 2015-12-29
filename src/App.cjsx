@@ -1,7 +1,4 @@
 React     = require 'react'
-ReactDOM  = require 'react-dom'
-
-ReactTooltip = require("react-tooltip")
 
 Data      = require './Data'
 
@@ -18,12 +15,6 @@ App = (props) ->
     <Scatter   data={Data.Simple} {...props} height={props.height / 4} />
   </div>
 
-app = <App
-        width={document.documentElement.clientWidth-4}
-        height={document.documentElement.clientHeight-20}
-      />
-
 App.displayName = 'App'
 
-ReactDOM.render app, document.getElementById 'app'
-# <ReactTooltip />
+module.exports = App
