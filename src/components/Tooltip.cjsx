@@ -1,5 +1,5 @@
-React = require 'react'
-PropTypes = require('react').PropTypes
+React         = require 'react'
+{ PropTypes } = require 'react'
 
 Tooltip = ({x, y, text, className}) ->
   <text x={x} y={y} className={className}>

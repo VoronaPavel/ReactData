@@ -1,7 +1,7 @@
-React     = require 'react'
-{ PropTypes } = require('react')
+React         = require 'react'
+{ PropTypes } = require 'react'
 
-Helper    = require './Helper'
+Helper        = require './Helper'
 
 Plot = ({data, height, width, className}) ->
   points = scale(data, height, width)
