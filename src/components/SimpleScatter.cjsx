@@ -14,10 +14,11 @@ SimpleScatter = ({data, width, height, r, className}) ->
   </svg>
 
 SimpleScatter.propTypes =
-  data      : PropTypes.oneOf([
-    PropTypes.arrayOf(PropTypes.number)
-    PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
-    ]).isRequired
+  data      :   PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.number)
+      PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
+      PropTypes.arrayOf(PropTypes.shape({ cx: PropTypes.number, cy: PropTypes.number }))
+      ]).isRequired
   height    : PropTypes.number.isRequired
   width     : PropTypes.number.isRequired
   r         : PropTypes.number.isRequired

@@ -8,12 +8,12 @@ Plot      = require './components/Plot'
 
 App = (props) ->
   <div>
-    <BarChart data={Data.Simple} {...props} height={props.height / 4} />
-    <Scatter  data={Data.Flat}   {...props} height={props.height / 4} />
-    <Plot     data={Data.Line}   {...props} height={props.height / 4} />
-    <Scatter  data={Data.Simple} {...props} height={props.height / 4} />
+    <Scatter   data={Data.Simple} {...props} height={props.height} />
   </div>
 
 App.displayName = 'App'
 
 module.exports = App
+
+# <BarChart  data={Data.Simple} {...props} height={props.height / 4} />
+# <Plot      data={Data.Line}   {...props} height={props.height / 4} />

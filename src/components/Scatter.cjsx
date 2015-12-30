@@ -3,9 +3,11 @@ React = require 'react'
 Scalable = require './Scalable'
 SimpleScatter = require './SimpleScatter'
 
-ScalableScatter = (props) ->
-  <Scalable {props}>
-    <SimpleScatter />
+Scatter = (props) ->
+  <Scalable>
+    <SimpleScatter {...props} />
   </Scalable>
+
+Scatter.displayName = 'Scatter'
 
 module.exports = Scatter
