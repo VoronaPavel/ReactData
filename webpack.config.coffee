@@ -2,6 +2,7 @@ webpack = require 'webpack'
 OpenBrowserPlugin = require 'open-browser-webpack-plugin'
 
 module.exports =
+  devtool: 'eval'
   entry: './src/index.cjsx'
   output:
     path: './build/js/'
