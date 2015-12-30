@@ -20,12 +20,11 @@ scaleArrays = (data, width, height, r) ->
     cx: (x - minX) / (maxX - minX) * (width - 2 * r) + r
     cy: height - ( (y - minY) / (maxY - minY) * (height - 2 * r) + r )
 
-# scale = (data, width, height, r) ->
-  # switch typeof data
-  #   when 'array'
-  # scaleArrays data, width, height, r
-    # when PropTypes.arrayOf(PropTypes.number).isRequired
-  # scaleFlat data, width, height, r
+scale = (data, width, height, r) -> switch
+  when Array.isArray(data[0])
+    scaleArrays data, width, height, r
+  when Array.isArray(data)
+    scaleFlat data, width, height, r
 
 Scalable.propTypes =
   children: PropTypes.element.isRequired
