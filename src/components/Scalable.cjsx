@@ -5,19 +5,18 @@ Helper = require './Helper'
 
 Scalable = ({children, width, height}) ->
   <svg width={width} height={height}>
-    {scaledElement(children)}
+    {scaleElement children}
   </svg>
 
-scaledElement = (children) ->
-  { props } = children
-  { data, width, height, r } = children.props
+scaleElement = (element) ->
+  { data, width, height, r } = element.props
   scaledData = scale data, width, height, r
-  React.cloneElement children, {data: scaledData}
+  React.cloneElement element, data: scaledData
 
 scale = (data, width, height, r) -> switch
-  when Array.isArray(data[0])
+  when Array.isArray data[0]
     scaleArrays data, width, height, r
-  when Array.isArray(data)
+  when Array.isArray data
     scaleFlat data, width, height, r
 
 scaleFlat = (data, width, height, r) ->
@@ -34,6 +33,8 @@ scaleArrays = (data, width, height, r) ->
 
 Scalable.propTypes =
   children: PropTypes.element.isRequired
+  height: PropTypes.number.isRequired
+  width: PropTypes.number.isRequired
 
 Scalable.displayName = 'Scalable'
 
