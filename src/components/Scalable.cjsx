@@ -9,7 +9,7 @@ Scalable = ({children, width, height}) ->
   </svg>
 
 scaleElement = (element) ->
-  { data, width, height, r } = element.props
+  { props: { data, width, height, r } } = element
   scaledData = scale data, width, height, r
   React.cloneElement element, data: scaledData
 
