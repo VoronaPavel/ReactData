@@ -1,5 +1,5 @@
 React         = require 'react'
-{ PropTypes } = require 'react'
+{ PropTypes: {oneOfType, arrayOf, number, shape, string} } = require 'react'
 
 SimplePlot = (props) ->
   <g>
@@ -10,19 +10,20 @@ SimplePlot = (props) ->
   </g>
 
 transform = (data) ->
-  data.map( ({x, y}, i) -> "#{x},#{y}")
+  data
+    .map ({x, y}) -> "#{x},#{y}"
     .reduce (left, right) -> "#{left} #{right}"
 
 SimplePlot.propTypes =
-  data      :   PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.number)
-      PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
-      PropTypes.arrayOf(PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }))
+  data: oneOfType([
+      arrayOf number
+      arrayOf arrayOf number
+      arrayOf shape { x: number, y: number }
       ]).isRequired
-  className : React.PropTypes.string
+  className: string
 
 SimplePlot.defaultProps =
-  className      : 'plot'
+  className: 'plot'
 
 SimplePlot.displayName = 'SimplePlot'
 

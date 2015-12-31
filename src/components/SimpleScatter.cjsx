@@ -1,5 +1,5 @@
 React = require 'react'
-{ PropTypes } = require 'react'
+{ PropTypes: {oneOfType, arrayOf, number, shape, string} } = require 'react'
 
 SimpleScatter = (props) ->
   <g>
@@ -8,17 +8,17 @@ SimpleScatter = (props) ->
   </g>
 
 SimpleScatter.propTypes =
-  data      :   PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.number)
-      PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
-      PropTypes.arrayOf(PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }))
+  data: oneOfType([
+      arrayOf number
+      arrayOf arrayOf number
+      arrayOf shape { x: number, y: number }
       ]).isRequired
-  r         : PropTypes.number.isRequired
-  className : PropTypes.string
+  className: string
+  r: number.isRequired
 
 SimpleScatter.defaultProps =
-  className : 'point'
-  r         : 15
+  className: 'point'
+  r        : 15
 
 SimpleScatter.displayName = 'SimpleScatter'
 

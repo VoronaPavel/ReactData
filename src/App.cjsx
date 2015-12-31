@@ -8,7 +8,7 @@ Plot      = require './components/Plot'
 
 App = (props) ->
   <div>
-    <Plot data={Data.Simple} {...props} />
+    <Scatter data={Data.Simple} {...props} />
   </div>
 
 App.displayName = 'App'
