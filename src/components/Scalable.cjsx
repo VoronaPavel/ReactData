@@ -22,14 +22,14 @@ scale = (data, width, height, r = 0) -> switch
 scaleFlat = (data, width, height, r) ->
   maxY = Math.max data ...
   data.map (y, i) ->
-    cx: (width - r) / data.length * i + r
-    cy: height - y / maxY * (height - r)
+    x: (width - r) / data.length * i + r
+    y: height - y / maxY * (height - r)
 
 scaleArrays = (data, width, height, r) ->
   { minX, maxX, minY, maxY } = Helper.calculate data
   data.map ([x, y], i) ->
-    cx: (x - minX) / (maxX - minX) * (width - 2 * r) + r
-    cy: height - ( (y - minY) / (maxY - minY) * (height - 2 * r) + r )
+    x: (x - minX) / (maxX - minX) * (width - 2 * r) + r
+    y: height - ( (y - minY) / (maxY - minY) * (height - 2 * r) + r )
 
 Scalable.propTypes =
   children: PropTypes.element.isRequired

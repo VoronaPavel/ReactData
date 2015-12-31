@@ -3,15 +3,15 @@ React = require 'react'
 
 SimpleScatter = (props) ->
   <g>
-    {props.data.map ({cx, cy}, i) ->
-      <circle key={i} cx={cx} cy={cy} {...props} />}
+    {props.data.map ({x, y}, i) ->
+      <circle key={i} cx={x} cy={y} {...props} />}
   </g>
 
 SimpleScatter.propTypes =
   data      :   PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.number)
       PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
-      PropTypes.arrayOf(PropTypes.shape({ cx: PropTypes.number, cy: PropTypes.number }))
+      PropTypes.arrayOf(PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }))
       ]).isRequired
   r         : PropTypes.number.isRequired
   className : PropTypes.string
