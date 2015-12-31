@@ -1,32 +1,20 @@
-React         = require 'react'
+React = require 'react'
 { PropTypes } = require 'react'
 
-Helper        = require './Helper'
+SimplePlot = require './SimplePlot'
+Scalable = require './Scalable'
 
-Plot = ({data, height, width, className}) ->
-  points = scale data, height, width
-  <svg width={width} height={height}>
-    <polyline
-      points={points}
-      className={className}
-    />
-  </svg>
-
-scale = (data, height, width) ->
-  { minX, maxX, minY, maxY } = Helper.calculate(data)
-  data.map( ([x, y], i) ->
-    cx = (x - minX) / (maxX - minX) * width
-    cy = height - (y - minY) / (maxY - minY) * height
-    "#{cx},#{cy}").reduce (left, right) -> "#{left} #{right}"
+Plot = (props) ->
+  <Scalable width={props.width} height={props.height}>
+    <SimplePlot {...props} />
+  </Scalable>
 
 Plot.propTypes =
-  data      : React.PropTypes.arrayOf(React.PropTypes.arrayOf(React.PropTypes.number)).isRequired
-  height    : React.PropTypes.number.isRequired
-  width     : React.PropTypes.number.isRequired
-  className : React.PropTypes.string
-
-Plot.defaultProps =
-  className      : 'plot'
+  data: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.number)
+      PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
+      PropTypes.arrayOf(PropTypes.shape({ cx: PropTypes.number, cy: PropTypes.number }))
+      ]).isRequired
 
 Plot.displayName = 'Plot'
 
