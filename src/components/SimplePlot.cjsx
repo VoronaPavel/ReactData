@@ -1,5 +1,5 @@
 React         = require 'react'
-{ PropTypes: {oneOfType, arrayOf, number, shape, string} } = require 'react'
+{PropTypes: {oneOfType, arrayOf, number, shape, string}} = require 'react'
 
 SimplePlot = (props) ->
   <g>
@@ -18,7 +18,7 @@ SimplePlot.propTypes =
   data: oneOfType([
       arrayOf number
       arrayOf arrayOf number
-      arrayOf shape { x: number, y: number }
+      arrayOf shape {x: number, y: number}
       ]).isRequired
   className: string
 

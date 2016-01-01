@@ -1,5 +1,5 @@
 React = require 'react'
-{ PropTypes } = require 'react'
+{PropTypes} = require 'react'
 
 SimplePlot = require './SimplePlot'
 Scalable = require './Scalable'
@@ -13,7 +13,7 @@ Plot.propTypes =
   data: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.number)
       PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
-      PropTypes.arrayOf(PropTypes.shape({ cx: PropTypes.number, cy: PropTypes.number }))
+      PropTypes.arrayOf(PropTypes.shape({cx: PropTypes.number, cy: PropTypes.number}))
       ]).isRequired
 
 Plot.displayName = 'Plot'

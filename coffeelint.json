@@ -3,7 +3,79 @@
         "level": "warn",
         "value": "120"
     },
+    "arrow_spacing": {
+        "level": "error"
+    },
+    "braces_spacing": {
+        "level": "error",
+        "value": "0"
+    },
+    "camel_case_classes": {
+        "level": "error"
+    },
+    "cyclomatic_complexity": {
+        "level": "error",
+        "value": "10"
+    },
+    "duplicate_key": {
+        "level": "error"
+    },
+    "eol_last": {
+        "level": "error"
+    },
+    "line_endings": {
+        "level": "error",
+        "value": "unix"
+    },
+    "missing_fat_arrows": {
+        "level": "error"
+    },
+    "no_backticks": {
+        "level": "error"
+    },
+    "no_debugger": {
+        "level": "error"
+    },
+    "no_empty_functions": {
+        "level": "error"
+    },
+    "no_empty_param_list": {
+        "level": "error"
+    },
+    "no_interpolation_in_single_quotes": {
+        "level": "error"
+    },
+    "no_nested_string_interpolation": {
+        "level": "error"
+    },
+    "no_tabs": {
+        "level": "error"
+    },
+    "no_this": {
+        "level": "error"
+    },
+    "no_throwing_strings": {
+        "level": "error"
+    },
+    "no_trailing_semicolons": {
+        "level": "error"
+    },
+    "no_trailing_whitespace": {
+        "level": "error"
+    },
+    "no_unnecessary_fat_arrows": {
+        "level": "error"
+    },
+    "prefer_english_operator": {
+        "level": "error"
+    },
+    "space_operators": {
+        "level": "error"
+    },
+    "spacing_after_comma": {
+        "level": "error"
+    },
     "coffeelint": {
-        "transforms": [ "coffee-react-transform" ]
+        "transforms": [ "coffeelint-cjsx", "coffee-react-transform" ]
     }
 }

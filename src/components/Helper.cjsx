@@ -4,7 +4,7 @@ calculate = (data) ->
     minY = y if y < minY or not minY? #todo optimize
     maxX = x if x > maxX or not maxX? #todo optimize
     maxY = y if y > maxY or not maxY? #todo optimize
-  { minX, maxX, minY, maxY }
+  {minX, maxX, minY, maxY}
 
 max = (values) ->
   Math.max values...
@@ -12,4 +12,4 @@ max = (values) ->
 min = (values) ->
   Math.min values...
 
-module.exports = { calculate, max }
+module.exports = {calculate, max}

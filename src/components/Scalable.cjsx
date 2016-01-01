@@ -1,7 +1,7 @@
 React = require 'react'
-{ PropTypes: {element, number} } = require 'react'
+{PropTypes: {element, number}} = require 'react'
 
-{ calculate, max } = require './Helper'
+{calculate, max} = require './Helper'
 
 Scalable = ({children, width, height}) ->
   <svg width={width} height={height}>
@@ -9,7 +9,7 @@ Scalable = ({children, width, height}) ->
   </svg>
 
 scaleElement = (element, height, width) ->
-  { props: { data, r } } = element
+  {props: {data, r}} = element
   scaledData = scale data, width, height, r
   React.cloneElement element, data: scaledData
 
@@ -26,7 +26,7 @@ scaleFlat = (data, width, height, r) ->
     y: height - y / maxY * (height - r)
 
 scaleArrays = (data, width, height, r) ->
-  { minX, maxX, minY, maxY } = calculate data
+  {minX, maxX, minY, maxY} = calculate data
   data.map ([x, y], i) ->
     x: (x - minX) / (maxX - minX) * (width - 2 * r) + r
     y: height - ( (y - minY) / (maxY - minY) * (height - 2 * r) + r )
