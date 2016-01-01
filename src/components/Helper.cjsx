@@ -9,9 +9,7 @@ calculate = (data) ->
 max = (values) ->
   Math.max values...
 
-extend = (object, properties) ->
-  for key, val of properties
-    object[key] = val
-  object
+min = (values) ->
+  Math.min values...
 
 module.exports = { calculate, max }

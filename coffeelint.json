@@ -1,0 +1,9 @@
+{
+    "max_line_length": {
+        "level": "warn",
+        "value": "120"
+    },
+    "coffeelint": {
+        "transforms": [ "coffee-react-transform" ]
+    }
+}
