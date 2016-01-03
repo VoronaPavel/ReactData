@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "s": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline"
   },
   "author": "",
   "license": "ISC",
