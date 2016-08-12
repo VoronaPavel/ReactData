@@ -1,9 +1,9 @@
 React         = require 'react'
-{ PropTypes } = require 'react'
+{PropTypes} = require 'react'
 
-Tooltip = ({x, y, text, className}) ->
-  <text x={x} y={y} className={className}>
-    {text}
+Tooltip = (props) ->
+  <text {...props}>
+    {props.text}
   </text>
 
 Tooltip.propTypes =

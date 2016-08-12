@@ -27,9 +27,6 @@
         "level": "error",
         "value": "unix"
     },
-    "missing_fat_arrows": {
-        "level": "error"
-    },
     "no_backticks": {
         "level": "error"
     },

@@ -1,21 +1,17 @@
 React = require 'react'
-{ PropTypes } = require 'react'
-
+Point = require './Point'
 Scalable = require './Scalable'
-SimpleScatter = require './SimpleScatter'
+data = require './2dData'
 
-Scatter = (props) ->
-  <Scalable width={props.width} height={props.height}>
-    <SimpleScatter {...props} />
-  </Scalable>
+Scatter = ({data}) ->
+  <g>
+    {data.map ({x, y}, i) ->
+      <Point key={i} x={x} y={y} />}
+  </g>
 
 Scatter.propTypes =
-  data: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.number)
-      PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number))
-      PropTypes.arrayOf(PropTypes.shape({ cx: PropTypes.number, cy: PropTypes.number }))
-      ]).isRequired
+  data
 
 Scatter.displayName = 'Scatter'
 
-module.exports = Scatter
+module.exports = Scalable Scatter

@@ -38,4 +38,7 @@ Scalable.propTypes =
 
 Scalable.displayName = 'Scalable'
 
-module.exports = Scalable
+module.exports = (Component) -> (props) ->
+  <Scalable width={props.width} height={props.height}>
+    <Component {...props} />
+  </Scalable>

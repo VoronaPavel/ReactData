@@ -1,4 +1,5 @@
 React = require 'react'
+Scalable = require './Scalable'
 
 BarChart = ({data, width, height, spaceBetween, className}) ->
   <svg width={width} height={height}>
@@ -34,4 +35,4 @@ BarChart.defaultProps =
 
 BarChart.displayName = 'BarChart'
 
-module.exports = BarChart
+module.exports = Scalable BarChart

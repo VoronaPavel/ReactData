@@ -8,16 +8,10 @@
 
 .point {
   fill: #5865ba;
-  r: 15;
-  transition: fill .1s linear;
-  transition: r .1s linear;
 }
 
 .point:hover {
-  fill: #3847b6;
-  transition: fill .1s linear;
-  r: 30;
-  transition: r .1s linear;
+  /*fill: #3847b6;*/
 }
 
 .plot {
