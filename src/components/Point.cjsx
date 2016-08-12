@@ -1,38 +1,16 @@
 React = require 'react'
+withTooltipOnHover = require './withTooltipOnHover'
 
-Tooltip = require './Tooltip'
+Point = (props) ->
+  <circle
+    cx={props.x}
+    cy={props.y}
+    r={props.r}
+  />
 
-Point = React.createClass
-  render: ->
-    <g onMouseOver={@showTooltip} onMouseLeave={@hideTooltip}>
-      <circle
-        cx={@props.x}
-        cy={@props.y}
-        r={@props.r}
-      />
-      <Tooltip
-        style={@tooltipStyle()}
-        x={@props.x}
-        y={@props.y}
-        text="(#{@props.x.toFixed 0}, #{@props.y.toFixed 0})"
-      />
-    </g>
+Point.defaultProps =
+  r: 15
 
-  showTooltip: ->
-    @setState isTooltipVisible: yes
+displayName: 'Point'
 
-  hideTooltip: ->
-    @setState isTooltipVisible: no
-
-  tooltipStyle: ->
-    visibility: if @state.isTooltipVisible then 'visible' else 'hidden'
-
-  getInitialState: ->
-    isTooltipVisible: no
-
-  getDefaultProps: ->
-    r: 15
-
-  displayName: 'Point'
-
-module.exports = Point
+module.exports = withTooltipOnHover Point
